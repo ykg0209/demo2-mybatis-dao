@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ykg.dao.StudentDao">
+    <select id="selectStudent" resultType="com.ykg.entity.Student">
+        select * from student order by id
+    </select>
+
+    <insert id="insertStudent">
+        insert into student values (#{id},#{name},#{email},#{age})
+    </insert>
+
+    <update id="updateStudent">
+        update student set name=#{name},email=#{email} where id = #{id}
+    </update>
+</mapper>
